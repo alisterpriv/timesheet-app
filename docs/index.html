@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timesheet App (Demo)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Timesheet App</h1>
+
+<div class="toggle">
+  <button type="button" onclick="showEmployer()">Employer Mode</button>
+  <button type="button" onclick="showEmployee()">Employee Mode</button>
+</div>
+
+<section id="employer-auth">
+  <h3>Employer Login</h3>
+  <input id="em_login_email" placeholder="Email">
+  <input id="em_login_password" type="password" placeholder="Password">
+  <button type="button" onclick="loginEmployer()">Login</button>
+</section>
+
+<section id="employee-auth" style="display:none;">
+  <h3>Employee Login</h3>
+  <input id="el_email" placeholder="Email">
+  <input id="el_password" type="password" placeholder="Password">
+  <button type="button" onclick="loginEmployee()">Login</button>
+</section>
+
+<section id="employer-panel" style="display:none;">
+  <h3>Employer Panel</h3>
+  <button type="button" class="logout" onclick="logoutEmployer()">Logout</button>
+
+  <h4>Add Employee</h4>
+  <input id="ae_name" placeholder="Employee name">
+  <input id="ae_email" placeholder="Employee email">
+  <input id="ae_password" type="password" placeholder="Password">
+  <button type="button" onclick="addEmployee()">Add Employee</button>
+
+  <h4>Employee Timesheet (Excel View)</h4>
+  <button type="button" onclick="loadTable()">Refresh Table</button>
+
+  <table id="reportTable">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Hours</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="employee-panel" style="display:none;">
+  <h3>Employee Panel</h3>
+  <button type="button" class="logout" onclick="logoutEmployee()">Logout</button>
+
+  <input id="hours" type="number" placeholder="Hours worked today">
+  <button type="button" onclick="addTime()">Submit Time</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
