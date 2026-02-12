@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API = "https://timesheet-app-8cmu.onrender.com";
 
 let loggedEmployer = null;
 let loggedEmployee = null;
